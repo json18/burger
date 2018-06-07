@@ -25,13 +25,11 @@ var orm = {
         var queryString = "UPDATE " + table + ";" 
         queryString = queryString + "SET " + status + ";"
         queryString = queryString + "WHERE" +  name + ";"
-
         console.log(queryString);
         connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
           }
-    
           cb(result);
         });
       }
