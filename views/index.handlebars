@@ -9,28 +9,13 @@
         {{#each burgers}}
           {{#unless this.devoured}}
             {{burger_name}}
-
+             <form action="/{{id}}" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button class="waves-effect waves-light btn red z-depth-3" type="submit">Devour it!</button>
+            </form>
           {{/unless}}
         {{/each}}
 
-
-
-
-
-
-
-
-
-        <form action="/{{id}}" method="POST">
-            <div class="input-group">
-              <li class="form-control">{{id}}.{{burger_name}}</li>
-                <span class="input-group-btn">
-                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
-                </span>
-            </div>
-        </form>
-
-        
       </div>
     </div>
 
@@ -52,5 +37,12 @@
 
       </div>
     </div>
+
+      {{#each burgers}}
+          {{#if this.devoured}}
+            {{burger_name}}
+          {{/if}}
+        {{/each}}
+
   </center>
 </div>
