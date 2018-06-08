@@ -9,14 +9,21 @@
         {{#each burgers}}
           {{#unless this.devoured}}
             {{burger_name}}
+
           {{/unless}}
         {{/each}}
 
 
 
-        <form action="burgers/eat/{{id}}" method="POST">
+
+
+
+
+
+
+        <form action="/{{id}}" method="POST">
             <div class="input-group">
-              <li class="form-control">{{id}}. {{burger_name}}</li>
+              <li class="form-control">{{id}}.{{burger_name}}</li>
                 <span class="input-group-btn">
                   <button class="btn btn-success devour-button" type="submit">Devour It!</button>
                 </span>
